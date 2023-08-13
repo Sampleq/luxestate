@@ -781,7 +781,7 @@ input[type=submit]:hover {
 
     .touch {
         flex-direction: column;
-        justify-content: space-around;
+        justify-content: flex-start;
         /* align-items: center; - не нужно т.к. у li width: 100%;, выравниваем через  a { text-align: center;  */
         height: 0;
         /* высота 0 - чтобы меню не было видно до его открывания */
