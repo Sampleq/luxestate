@@ -686,6 +686,7 @@ input[type=submit]:hover {
         font-size: 16px;
         color: #94e1f5;
         margin-bottom: 20px;
+        text-transform: uppercase;
     }
     .footer__link {
         text-decoration: none;
