@@ -775,6 +775,9 @@ input[type=submit]:hover {
     .menu li a.contacts {
         margin-right: 0;
     }
+    .menu li a {
+        font-size: 16px;
+    }
 
     .touch {
         flex-direction: column;
@@ -803,7 +806,7 @@ input[type=submit]:hover {
     #checkbox-menu:checked+label .touch {
         /* задаем свойства детям label -а, который идёт в html-е сразу после #checkbox-menu (при отмечании чекбокса)*/
         /* height: 350px; */ 
-        height: 294px; /* ставим высоту fit-content , смотрим в инспекторе сколько реально  высота без разрывов и прописываем её в css */
+        height: 322px; /* ставим высоту fit-content , смотрим в инспекторе сколько реально  высота без разрывов и прописываем её в css */
     }
 
     #checkbox-menu:checked+label .touch li {
