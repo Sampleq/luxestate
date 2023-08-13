@@ -764,6 +764,7 @@ input[type=submit]:hover {
         color: #000;
         background: #ffcc01;
         transition: all 0.1s linear;
+        border-top: 1px solid #757575;
     }
 
     .toggle:hover {
