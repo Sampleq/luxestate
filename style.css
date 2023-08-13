@@ -1,0 +1,1003 @@
+/* }
+#checkbox-menu {
+    visibility: hidden;
+    position: relative;
+    background-color: aqua;
+}
+#checkbox-menu:checked + label > .menu{
+    display: none;
+}
+.toggle {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+li {
+    list-style: none;
+} */
+
+@font-face {
+    font-family: 'Roboto';
+    src: url(./fonts/Roboto-Regular.ttf);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url(./fonts/Roboto-Bold.ttf);
+    font-weight: 700;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3 {
+    font-weight: 400;
+}
+
+ul {
+    list-style: none;
+}
+
+nav {
+    margin: 0 auto;
+    max-width: 1100px;
+    width: 100%;
+}
+
+#checkbox-menu,
+.toggle {
+    display: none;
+}
+
+.menu {
+    
+    /* background-color: rgba(240, 255, 255, 0.908); */
+    
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+}
+
+.menu li a {
+    color: #000;
+    text-decoration: none;
+    /* align-self: center; */
+    font-size: 13px;
+    padding: 10px 15px;
+    transition: background 0.2s linear;
+}
+
+.menu li a:hover {
+    background: #ffcc01;
+    border-radius: 3px;
+}
+
+.menu li a.logo {
+    font-size: 25px;
+    margin-right: 240px;
+    
+    background-color: #ffcc01;
+    cursor: auto;
+}
+
+.menu li a.contacts {
+    margin-right: 100px;
+}
+
+.wrapper {
+    margin: 0 auto;
+    max-width: 1100px;
+    width: 100%;
+
+    /* background-color: rgba(127, 255, 212, 0.701); */
+}
+
+.intro {
+    margin-top: 25px;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.intro-img {
+    background-image: url(./img/main_room.jpg);
+    background-size: cover;
+    width: 965px;
+    height: 640px;
+    /* position: relative; */
+}
+
+.intro-text {
+    font-size: 62px;
+    position: absolute;
+    /* right: 450px; */
+    left: 0;
+    top: 220px;
+
+    /* text-shadow: 1px 1px 0 #ffcc01,
+                 1px -1px 0 #ffcc01,
+                 -1px 1px 0 #ffcc01,
+                 -1px -1px 0 #ffcc01;
+                  */
+    text-shadow: 1px 1px 0 #fff,
+                 1px -1px 0 #fff,
+                 -1px 1px 0 #fff,
+                 -1px -1px 0 #fff;
+
+
+    /* filter: drop-shadow( 0 0 5px #0f0); */
+}
+
+.intro-contacts {
+    background-color: #ffcc01;
+    max-width: 590px;
+    position: absolute;
+    right: 0;
+    top: 560px;
+    display: flex;
+    padding: 30px 50px;
+    /* justify-content: space-between; */
+}
+
+.intro-contacts i {
+    color: white;
+    margin-right: 30px;
+}
+
+.intro-contacts p {
+    font-size: 18px;
+    margin-right: 30px;
+}
+
+/* stats  */
+
+.stats {
+    display: flex;
+    margin-top: 130px;
+}
+
+.stats.wrapper {
+    width: 95%;
+}
+
+.stats__text {
+    padding-right: 40px;
+}
+
+.stats__heading {
+    font-size: 42px;
+    font-weight: 400;
+    margin-bottom: 70px;
+}
+
+.stats__descr {
+    font-size: 13px;
+    line-height: 27px;
+    margin-bottom: 50px;
+}
+
+/* .stats__descr:nth-child(n+2) {
+    margin-top: 50px;
+ } */
+
+.stats__num {
+    flex-shrink: 0;
+    display: flex;
+    width: 430px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
+    gap: 30px;
+}
+
+.square {
+    width: 200px;
+    height: 200px;
+    background-color: #f6f5f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.square__num {
+    font-size: 40px;
+    color: #ffcc01;
+    margin-bottom: 13px;
+}
+
+.square__text {
+    font-size: 14px;
+}
+
+/* -- apartments -- */
+
+.apartments {
+    background-color: #f6f5f4;
+    margin-top: 100px;
+    padding: 60px 0;
+}
+
+.apartments__heading {
+    padding-bottom: 85px;
+    font-size: 40px;
+}
+.cards {
+    margin-bottom: 50px;
+
+    /* display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 30px; */
+    /* justify-content: space-between; */
+    /* grid-template-columns: repeat(3, 1fr); */
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* grid-контейнер пытается заполниться grid-элементами с размером От не меньше 300 пикселей и До одной фракции (1fr) - если не помещается - то переносит на новую строку. Когда ширина grid-контейнера уменьшается, элементы сжимаются, но не болеее чем до 300 пикселей, затем, один не помещающийся элемент убирается из строки и переносится на новую строку. Ограничение максимального размера содержимого grid-элемента задаём в свойствах самого элемента с помощью max-width: 350px; */
+    justify-items: center;  /* выравниваем содержимое grid-элемента по горизонтали по центру -  когда размер grid-элемента становится больше максимального размера его содержимого (350пикселей) */
+    gap: 25px; /* задаём отступ между рядами и колонками (между колонками видимое пустое пространство может быть больше, когда grid-элементы больше размера содержимого  */
+    
+}
+.card {
+    max-width: 350px; /* Ограничиваем максимальный размер карточки (т.е. содержимого grid-элемента)  */
+    background-color: #fff;
+
+    /* flex-shrink: 0; */
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.529);
+    transition: all 0.3s;
+}
+.card:hover {
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.729);
+
+    cursor: pointer;
+}
+.card__img {
+    width: 100%;
+}
+.card__heading {
+    font-weight: 700;
+    padding: 20px;
+}
+.card__specs {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px 20px;
+}
+.card__price {
+    margin-right: 50px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffcc01;
+}
+.card__info-item {
+    margin-left: 20px;
+}
+
+.search {
+    display: flex;
+    padding-top: 50px;
+}
+.search__input {
+    width: 300px;
+    height: 70px;
+    border: none;
+    background-image: url(./img/search_icon.png);
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: center left 15px;
+    padding-left: 50px;
+    outline: none;
+    font-size: 15px;
+    color: #919eb9;
+    border-radius: 4px 0 0 4px;
+}
+.search form:hover {
+    filter: drop-shadow(0 0 4px #ffcc01);
+}
+input[type=submit] {
+    width: 115px;
+    height: 70px;
+    background-color: #ffcc01;
+    border-radius: 0 4px 4px 0;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    color: #000;
+}
+input[type=submit]:hover {
+    cursor: pointer;
+    background-color: #d3a900;
+    /* box-shadow: 4px 0 5px rgba(0, 0, 0, 0.492); */
+}
+.search__all {
+    width: 250px;
+    height: 70px;
+    border: none;
+    border-radius: 4px;
+    font-size: 15px;
+    margin-left: 40px;
+}
+.search__all:hover {
+    cursor: pointer;
+    background-color: #bbb;
+}
+
+/* ----- steps ---- */
+
+.steps {
+    padding-top: 55px;
+}
+.steps__heading {
+    font-size: 40px;
+
+    margin-bottom: 35px;
+}
+.steps__text {
+    line-height: 27px;
+    font-size: 13px;
+    max-width: 360px;
+
+    margin-bottom: 70px;
+}
+
+.step {
+    width: 340px;
+    height: 370px;
+    padding-right: 15px;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    transition: all 0.3s;
+}
+.step:hover {
+    background-color: #ffcc01;
+    color: #fff;
+}
+.step:hover .step__num {
+    color: #fff;
+}
+.step__num {
+    font-size: 200px;
+    font-weight: 700;
+    color: #000;
+    position: relative;
+    top: -0.5em;
+    left: -0.17em;
+    transition: all 0.3s;
+}
+.step__heading {
+    font-size: 14px;
+    margin-left: 40px;
+    margin-top: -100px;
+    margin-bottom: 20px;
+}
+.step__heading span {
+    padding-right: 15px;
+}
+.step__info {
+    margin-left: 70px;
+    line-height: 29px;
+}
+.step__link {
+    display: inline-block;
+    margin-left: 70px;
+    margin-top: 20px;
+    /* text-decoration: underline;  */ /* можно изменить цвет подчеркивания текста используя вместо border-bottom-а  свойство text-decoration: underline */
+    border-bottom: 3px solid #000;
+    padding-bottom: 5px;
+    transition: border-bottom 0.3s ;
+}
+.step__link:hover {
+    cursor: pointer;
+}
+/* вместо js изменить цвет border-bottom-а  можно обратившить прямо к нему через  составной слектор css */
+.step:hover .step__link {
+    border-bottom: 3px solid #fff;
+}
+/* вместо js */
+
+.steps__container {
+    margin-bottom: 50px;
+    /* display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 40px;
+    justify-items: center;
+    justify-content: center;  */
+    /* - т.к. карточек три (3) то при переносе третья не центрируется тюк во втором ряду создаётся 4-я грид-ячейка - и при auto-fill и при auto-fit. -  делаем через flex */
+
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* -- services --- */
+.services {
+    padding-top: 50px;
+}
+.services__heading {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+.services__container {
+    margin-top: 70px;
+}
+.services__text_head {
+    max-width: 400px;
+}
+.services__sub-hed {
+    font-size: 25px;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+.services__text {
+    margin-bottom: 60px;
+    font-size: 13px;
+    line-height: 30px;
+}
+
+.services__img {
+    width: 100%;
+}
+
+        /* .services__container  через flex */
+.services__container {
+    display: flex;
+    justify-content: space-between;
+    gap: 3%;
+}
+.services__img-cont {
+    width: 60%;
+    max-width: 650px;
+}
+
+.services__text-cont {
+    width: 37%;
+}
+    /* .services__container  через flex */
+
+    /* --- agents --- */
+    .agents {
+        background-color: #f6f5f4;
+        padding-top: 60px;
+        margin-top: 30px;
+    }
+    .agents__heading {
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+    .agents__text {
+        font-size: 13px;
+        line-height: 30px;
+        max-width: 360px;
+        margin-bottom: 40px;
+    }
+    .cards_agents {
+        gap: 32.5px;
+    }
+    .card_agent {
+        max-width: 345px;
+    }
+    .card__price_name {
+        margin-right: 0;
+        font-size: 16px;
+    }
+    .fab {
+        color: #000;
+    }
+    .fab:hover {
+        color: #ffcc01;
+    }
+
+    /* -- add ---- */
+
+    .add {
+        padding-top: 90px;
+        padding-bottom: 100px;
+        position: relative;
+    }
+    .add__line {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 3%;
+        margin-bottom: 80px;
+        /* position: relative; */
+
+    }
+    .add__line:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+    .add__img-cont {
+        width: 540px;
+        height: 330px;
+        background-color: rgba(128, 255, 0, 0.489);
+        position: relative;
+        
+    }
+    .add_img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+    .add__location {
+        width: 340px;
+        height: 80px;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        background-color: #ffcc01;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+    }
+    .add__line:nth-child(even) .add__location {
+        left: auto;
+        right: 0;
+        transform: translate(0, 50%);
+    }
+    .add__line:nth-child(even) .add__info {
+        text-align: right;
+    }
+    .add__location i {
+        color: #fff;
+        font-size: 25px;
+        margin-right: 1em;
+        /* position: relative;  - в макете криво нарисовано
+        top: 5px; */
+    }
+    .add__info {
+        width: 450px;
+    }
+    .add__heading {
+        font-weight: 700;
+        font-size: 25px;
+    }
+    .add_text {
+        font-size: 13px;
+        line-height: 30px;
+    }
+
+    /* .add__info::after {
+        content: 'Show Me More';
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        height: 50px;
+        background-color: #1f373d;
+        color: #fff;
+        font-size: 18px;
+        position: absolute;
+        bottom: 0;
+    }
+    //не работает :hover на псевдоэлементе ::after  - ХЗ
+    .add__info::after:hover{
+        cursor: pointer;
+        background-color: #172a2e;
+    } */
+
+    .show-more {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        height: 50px;
+        border: none;
+        outline: none;
+        background-color: #1f373d;
+        color: #fff;
+        font-size: 18px;
+        position: absolute;
+        bottom: 180px;
+        right: 250px;
+    }
+    .show-more:hover {
+        cursor: pointer;
+        color: #ffcc01;
+        background-color: #2c5259;
+    }
+
+    /* -- footer --- */
+
+    .footer {
+        background-color: #1f373d;
+        color: #fff;
+        padding-top: 50px;
+        padding-bottom: 30px;
+    }
+    .top-footer {
+        border-bottom: 1px solid #94e1f5;
+        padding-bottom: 30px;
+        margin-bottom: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+    }
+    .footer__heading {
+        font-size: 30px;
+        font-weight: 700;
+    }
+    .footer__input {
+        display: block;
+        width: 300px;
+        height: 70px;
+        border: none;
+        padding-left: 1em;
+        outline: none;
+        font-size: 15px;
+        /* color: #919eb9; */
+        border-radius: 4px;
+    }
+
+    .footer__search {
+        position: relative;
+    }
+    .footer__search:hover {
+        filter: drop-shadow(0 0 4px #ffcc01);
+    }
+    .footer__search::after {
+        content: '\279E';
+        font-size: 20px;
+        color: #919eb9;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translate(-100%, -50%);
+    }
+    .main-footer {
+        display: flex;
+        justify-content: space-between;
+        padding-right: 10%;
+        gap: 5%;
+    }
+    .main-footer__heading {
+        font-size: 20px;
+    }
+    .footer__links {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        max-width: 600px;
+    }
+    .footer__links-heading {
+        font-size: 16px;
+        color: #94e1f5;
+        margin-bottom: 20px;
+    }
+    .footer__link {
+        text-decoration: none;
+        color: #fff;
+        display: block;
+        padding-bottom: 1em;
+    }
+    .footer__link:hover {
+        color: #ffcc01;
+    }
+
+    /* Чтобы на iPhone, iOS не применялось масштабирование при заполнении форм - ставим размер шрифта более 16px */
+    input:focus, textarea:focus, select:focus {
+        font-size: 16px;
+    }
+@media screen and (max-width: 1090px) {
+    .menu {
+        justify-content: space-between;
+    }
+    .menu li a.logo {
+        margin-right: 10px;
+    }   
+    .menu li a.contacts {
+        margin-right: 5px;
+    }  
+    .steps__container {
+        gap: 20px;
+    }   
+    .step__heading {
+        margin-left: 20px;
+    }   
+    .step__info {
+        margin-left: 50px;
+    }   
+    .step__link {
+        margin-left: 50px;
+    }   
+    .show-more {
+        right: calc(44% - 200px);
+    }   
+    .main-footer {
+        padding-right: 5%;
+    }   
+    .wrapper:not(.intro.wrapper, .add.wrapper) {
+        padding-left: 2%;
+        padding-right: 2%;
+     } 
+}
+
+@media screen and (max-width: 765px) {
+    .wrapper {
+        padding-left: 2%;
+        padding-right: 2%;
+     }
+    .intro.wrapper {
+        padding: 0;
+     }
+     .stats.wrapper {
+        width: 100%;
+    }
+
+    .toggle {
+        display: block;
+        width: 100%;
+        /* не обязательно т.к блок и так занимает всю ширину - чисто чтобы было явно видно */
+        text-align: center;
+        font-size: 18px;
+        line-height: 40px;
+        color: #000;
+        background: #ffcc01;
+        transition: all 0.1s linear;
+    }
+
+    .toggle:hover {
+        background: #d3a900;
+        cursor: pointer;
+    }
+
+    .menu li a.logo,
+    .menu li a.contacts {
+        margin-right: 0;
+    }
+
+    .touch {
+        flex-direction: column;
+        justify-content: space-around;
+        /* align-items: center; - не нужно т.к. у li width: 100%;, выравниваем через  a { text-align: center;  */
+        height: 0;
+        /* высота 0 - чтобы меню не было видно до его открывания */
+        transition: height 0.5s;
+    }
+
+    .touch li {
+        opacity: 0;
+        visibility: hidden;
+        /* без этого при задании opacity: - не нажимается .toggle - элементы li начинают его перекрывать */
+        display: flex;
+        width: 100%;
+        /* align-self: center; */
+    }
+
+    .touch li a {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    #checkbox-menu:checked+label .touch {
+        /* задаем свойства детям label -а, который идёт в html-е сразу после #checkbox-menu (при отмечании чекбокса)*/
+        /* height: 350px; */ 
+        height: 294px; /* ставим высоту fit-content , смотрим в инспекторе сколько реально  высота без разрывов и прописываем её в css */
+    }
+
+    #checkbox-menu:checked+label .touch li {
+        opacity: 1;
+        visibility: visible;
+        /* background-color: rgba(137, 43, 226, 0.631); */
+        transition: all 0.7s linear;
+    }
+
+    /* section intro  */
+
+    .intro {
+        margin-top: 0;
+    }
+
+    .intro-text {
+        font-size: 55px;
+    }
+
+    .intro-img {
+        background-position: center left;
+    }
+
+    .intro-contacts {
+        max-width: 100vw;
+        left: 0;
+        top: 585px;
+        justify-content: space-between;
+        margin-right: 0;
+        padding: 20px 20px;
+    }
+
+    .intro-contacts i {
+        margin-right: 10px;
+    }
+
+    .intro-contacts p {
+        font-size: 13px;
+        margin-right: 0;
+    }
+
+    /* stats  */
+
+    .stats {
+        margin-top: 50px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stats__text {
+        padding: 10px;
+    }
+
+    .stats__heading {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+
+    .stats__descr {
+        font-size: 13px;
+        line-height: 18px;
+        margin-bottom: 15px;
+    }
+
+    /* .search {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .search__all {
+        width: 150px;
+        height: 70px;
+        margin-left: 10px;
+    }
+    input[type=text] {
+        width: 230px;
+    } */
+    .search {
+        flex-direction: column;
+    }
+    form {
+        display: flex;
+    }
+    input {
+
+        flex-grow: 1;
+        flex-shrink: 1;
+        width: 300px;
+        height: 70px;
+        border: none;
+        background-repeat: no-repeat;
+        background-size: 20px;
+        background-position: center left 15px;
+        outline: none;
+        font-size: 15px;
+        color: #919eb9;
+        border-radius: 4px 0 0 4px;
+    }
+    .search__all {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    /* -- steps -- */
+    .steps {
+        padding-top: 20px;
+    }
+    .steps__container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .steps__heading, .steps__text {
+        margin-left: 5%;
+        margin-bottom: 25px;
+    }
+
+    /* .services__container  через flex */
+    .services {
+        padding-top: 0;
+    }
+    .services.wrapper {
+        padding-left: 2%;
+        padding-right: 2%;
+     }
+    .services__container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .services__img-cont {
+        margin-bottom: 20px;
+    }
+    .services__img-cont, .services__text-cont {
+        width: 100%;
+    }
+    /* --- .add ---- */
+    .add {
+        padding-bottom: 10px;
+        margin-bottom: 50px;
+    }
+    .add__line, .add__line:nth-child(even) {
+        flex-direction: column;
+        gap: 0;
+    }
+    .add__line:nth-child(even) .add__info {
+        text-align: left;
+    }
+    .add__heading {
+        margin-top: 60px;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    .add__line:nth-child(even) .add__location {
+        left: 50%;
+        transform: translate(-50%, 50%);
+    }
+    .add__img-cont {
+        max-width: 100vw;
+    }
+    .add__info {
+        width: 100%;
+    }
+    .show-more {
+        bottom: 0;
+        right: calc(50% - 100px);
+    }
+
+    .main-footer {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        padding-right: 0;
+    }
+}
+
+@media screen and (max-width:520px) {
+    .intro-text {
+        top: 120px;
+    }
+    .intro-img {
+        height: 500px;
+    }
+    .intro-contacts {
+        top: 445px;
+    }
+    .stats__num {
+        width: auto; /* без этого  почуму-то не сжимался меньше заданной ширины*/
+        flex-shrink: 1;
+        justify-content: center;
+    }
+    .cards {
+        grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); /* позволяем сжиматься grid-элементам (карточкам) до 230px*/
+        column-gap: 70px; /*  чтобы не было в 2 колонки на маленьком экране */
+    }
+    .step {
+        width: 300px;
+        padding-right: 15px;
+    }
+    .add__location {
+        width: 300px;
+        height: 70px;
+    }
+    .top-footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+}
+@media screen and (max-width:380px) {
+    .footer__links-cont {
+        width: min-content;
+    }
+}
