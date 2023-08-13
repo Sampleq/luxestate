@@ -1010,6 +1010,9 @@ input[type=submit]:hover {
         align-items: center;
         gap: 20px;
     }
+    .footer__links-heading {
+        text-transform: capitalize;
+    }
 }
 @media screen and (max-width:380px) {
     .footer__links-cont {
