@@ -806,13 +806,13 @@ input[type=submit]:hover {
     #checkbox-menu:checked+label .touch {
         /* задаем свойства детям label -а, который идёт в html-е сразу после #checkbox-menu (при отмечании чекбокса)*/
         /* height: 350px; */ 
-        height: 322px; /* ставим высоту fit-content , смотрим в инспекторе сколько реально  высота без разрывов и прописываем её в css */
+        height: 318px; /* ставим высоту fit-content , смотрим в инспекторе сколько реально  высота без разрывов и прописываем её в css */
     }
 
     #checkbox-menu:checked+label .touch li {
         opacity: 1;
         visibility: visible;
-        /* background-color: rgba(137, 43, 226, 0.631); */
+        background-color: rgba(137, 43, 226, 0.631);
         transition: all 0.7s linear;
     }
 
