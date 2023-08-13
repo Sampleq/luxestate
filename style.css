@@ -759,8 +759,8 @@ input[type=submit]:hover {
         width: 100%;
         /* не обязательно т.к блок и так занимает всю ширину - чисто чтобы было явно видно */
         text-align: center;
-        font-size: 18px;
-        line-height: 40px;
+        font-size: 20px;
+        line-height: 42px;
         color: #000;
         background: #ffcc01;
         transition: all 0.1s linear;
@@ -779,6 +779,9 @@ input[type=submit]:hover {
     .menu li a {
         font-size: 16px;
         padding: 11px 15px;
+    }
+    .menu li:last-child a {
+        padding-bottom: 22px;
     }
 
     .touch {
@@ -808,7 +811,7 @@ input[type=submit]:hover {
     #checkbox-menu:checked+label .touch {
         /* задаем свойства детям label -а, который идёт в html-е сразу после #checkbox-menu (при отмечании чекбокса)*/
         /* height: 350px; */ 
-        height: 338px; /* ставим высоту fit-content , смотрим в инспекторе сколько реально  высота без разрывов и прописываем её в css */
+        height: 349px; /* ставим высоту fit-content , смотрим в инспекторе сколько реально  высота без разрывов и прописываем её в css */
     }
 
     #checkbox-menu:checked+label .touch li {
