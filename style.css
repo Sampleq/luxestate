@@ -264,6 +264,9 @@ nav {
 }
 .card__img {
     width: 100%;
+    /* height: 385px; */
+    
+    object-fit: cover;
 }
 .card__heading {
     font-weight: 700;
@@ -365,7 +368,7 @@ input[type=submit]:hover {
     -khtml-user-select: none;    /* Konqueror */
     -moz-user-select: none;      /* Firefox */
     -ms-user-select: none;       /* Internet Explorer/Edge */
-    user-select: none; /* запрещаем выделение текста */
+    user-select: none;  /* запрещаем выделение текста */
 }
 .step:hover {
     background-color: #ffcc01;
@@ -496,6 +499,9 @@ input[type=submit]:hover {
     }
     .card_agent {
         max-width: 345px;
+    }
+    .card__img_agent {
+        height: 515px;
     }
     .card__price_name {
         margin-right: 0;
