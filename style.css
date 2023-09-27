@@ -704,10 +704,13 @@ input[type=submit]:hover {
         color: #ffcc01;
     }
 
+    /* iOS inputs fix */
     /* Чтобы на iPhone, iOS не применялось масштабирование при заполнении форм - ставим размер шрифта более 16px */
     input:focus, textarea:focus, select:focus {
         font-size: 16px;
     }
+    /* end of iOS inputs fix */
+
 @media screen and (max-width: 1090px) {
     .menu {
         justify-content: space-between;
@@ -808,13 +811,13 @@ input[type=submit]:hover {
         text-align: center;
     }
 
-    #checkbox-menu:checked+label .touch {
+    #checkbox-menu:checked + label + .menu {
         /* задаем свойства детям label -а, который идёт в html-е сразу после #checkbox-menu (при отмечании чекбокса)*/
         /* height: 350px; */ 
         height: 349px; /* ставим высоту fit-content , смотрим в инспекторе сколько реально  высота без разрывов и прописываем её в css */
     }
 
-    #checkbox-menu:checked+label .touch li {
+    #checkbox-menu:checked + label + .menu li {
         opacity: 1;
         visibility: visible;
         /* background-color: rgba(137, 43, 226, 0.631); */
